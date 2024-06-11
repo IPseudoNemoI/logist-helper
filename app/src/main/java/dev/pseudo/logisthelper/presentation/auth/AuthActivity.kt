@@ -22,7 +22,7 @@ class AuthActivity : AppCompatActivity() {
         }
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fl_phone, AuthPhoneFragment.newInstance())
+            .replace(R.id.fl_phone, AuthPhoneFragment())
             .commit()
     }
 }
