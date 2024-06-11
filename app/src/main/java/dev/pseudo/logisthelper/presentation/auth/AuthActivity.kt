@@ -20,5 +20,9 @@ class AuthActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fl_phone, AuthPhoneFragment.newInstance())
+            .commit()
     }
 }

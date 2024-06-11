@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-
+    implementation (libs.fredporciuncula.phonemoji)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
