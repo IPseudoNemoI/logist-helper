@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/authPhoneFragment">
+    <fragment
+        android:id="@+id/authPhoneFragment"
+        android:name="dev.pseudo.logisthelper.presentation.auth.AuthPhoneFragment"
+        android:label="fragment_auth_phone"
+        tools:layout="@layout/fragment_auth_phone" >
+        <action
+            android:id="@+id/action_authPhoneFragment_to_authPasswordFragment"
+            app:destination="@id/authPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authPasswordFragment"
+        android:name="dev.pseudo.logisthelper.presentation.auth.AuthPasswordFragment"
+        android:label="fragment_auth_password"
+        tools:layout="@layout/fragment_auth_password" />
+</navigation>

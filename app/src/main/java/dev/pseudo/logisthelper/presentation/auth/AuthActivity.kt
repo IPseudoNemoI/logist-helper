@@ -1,10 +1,13 @@
 package dev.pseudo.logisthelper.presentation.auth
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.ActivityAuthBinding
 
@@ -20,9 +23,5 @@ class AuthActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fl_phone, AuthPhoneFragment())
-            .commit()
     }
 }

@@ -39,7 +39,10 @@ android {
 }
 
 dependencies {
-    implementation (libs.fredporciuncula.phonemoji)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.fredporciuncula.phonemoji)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
