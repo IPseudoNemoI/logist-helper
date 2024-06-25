@@ -9,7 +9,7 @@
     tools:context=".presentation.auth.AuthActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fl_phone"
+        android:id="@+id/fcv_auth"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:name="androidx.navigation.fragment.NavHostFragment"

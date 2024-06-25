@@ -17,5 +17,14 @@
         android:id="@+id/authPasswordFragment"
         android:name="dev.pseudo.logisthelper.presentation.auth.AuthPasswordFragment"
         android:label="fragment_auth_password"
-        tools:layout="@layout/fragment_auth_password" />
+        tools:layout="@layout/fragment_auth_password" >
+        <action
+            android:id="@+id/action_authPasswordFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="dev.pseudo.logisthelper.presentation.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/task"
+        android:icon="@drawable/task"
+        android:title="Задания" />
+    <item
+        android:id="@+id/graph"
+        android:icon="@drawable/graph"
+        android:title="Графики" />
+    <item
+        android:id="@+id/message"
+        android:icon="@drawable/message"
+        android:title="Чат" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile"
+        android:title="Профиль" />
+</menu>
