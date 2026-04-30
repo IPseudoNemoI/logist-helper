@@ -48,15 +48,14 @@ class AuthPasswordFragment : Fragment() {
                 onBtnNextClick()
             } else {
                 Log.d("damn", "Неа")
-                redrawBorder()
                 drawError()
             }
         }
     }
 
-    private fun redrawBorder() {
+//    private fun redrawBorder() {
 //        binding.textInputLayoutPass.boxStrokeColor = ContextCompat.getColor(requireContext(), R.color.red)
-    }
+//    }
 
     private fun drawError() {
         binding.tvError.text = "Неверный пароль"
@@ -101,9 +100,12 @@ class AuthPasswordFragment : Fragment() {
     }
 
     private fun onBtnNextClick() {
+        Log.d("dam", "поон")
         val controller = findNavController()
+        Log.d("dam", "пон")
         binding.bNext.setOnClickListener {
             controller.navigate(R.id.mainActivity)
+            Log.d("dam", "Не пон")
         }
     }
 }

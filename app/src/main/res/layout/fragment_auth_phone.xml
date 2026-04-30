@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <com.fredporciuncula.phonemoji.PhonemojiTextInputLayout
-        android:id="@+id/text_input_layout_pass"
+        android:id="@+id/text_input_layout_phone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_description">
 
         <com.fredporciuncula.phonemoji.PhonemojiTextInputEditText
-            android:id="@+id/t_phone"
+            android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:digits="0123456789+"
@@ -104,6 +104,6 @@
         app:cornerRadius="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_pass" />
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_phone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

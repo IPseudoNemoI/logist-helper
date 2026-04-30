@@ -40,9 +40,12 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
     implementation(libs.fredporciuncula.phonemoji)
+
     implementation(libs.appsfeature.otp.view)
 
     implementation(libs.androidx.core.ktx)

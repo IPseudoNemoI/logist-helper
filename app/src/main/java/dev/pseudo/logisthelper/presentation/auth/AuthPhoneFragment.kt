@@ -33,7 +33,7 @@ class AuthPhoneFragment : Fragment() {
     }
 
     private fun onTextChangedListener() {
-        binding.tPhone.addTextChangedListener {
+        binding.etPhone.addTextChangedListener {
             if (it != null) {
                 redrawButtonAsState(it.length == 16, binding.bNext)
             }
