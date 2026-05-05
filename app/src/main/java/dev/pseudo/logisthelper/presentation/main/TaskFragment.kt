@@ -38,7 +38,6 @@ class TaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupBottomNavigation()
         setupRecyclerView()
         observeViewModel()
 
@@ -49,14 +48,6 @@ class TaskFragment : Fragment() {
         super.onDestroyView()
         binding.rvTasks.adapter = null
         _binding = null
-    }
-
-    private fun setupBottomNavigation() {
-        binding.bottomNavigationView.setupWithNavController(findNavController())
-
-        binding.bottomNavigationView.setBackgroundResource(
-            R.drawable.bg_bottom_nav
-        )
     }
 
     private fun setupRecyclerView() {
