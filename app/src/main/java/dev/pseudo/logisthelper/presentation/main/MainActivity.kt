@@ -3,9 +3,7 @@ package dev.pseudo.logisthelper.presentation.main
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.ui.setupWithNavController
 import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.ActivityMainBinding

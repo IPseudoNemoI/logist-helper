@@ -40,14 +40,14 @@ class AuthPasswordFragment : Fragment() {
     }
 
     private fun checkPassword() {
-        val truePass = 111111
+        val truePass = "111111"
+
         binding.bNext.setOnClickListener {
-            val password = binding.etPassword.otp.toString()
-            if (password == truePass.toString()) {
-                Log.d("damn", "Агагаг")
-                onBtnNextClick()
+            val password = binding.etPassword.otp.orEmpty()
+
+            if (password == truePass) {
+                findNavController().navigate(R.id.mainActivity)
             } else {
-                Log.d("damn", "Неа")
                 drawError()
             }
         }
@@ -62,15 +62,11 @@ class AuthPasswordFragment : Fragment() {
     }
 
     private fun backToLastFragment() {
-        val conroller = findNavController()
+        val controller = findNavController()
         binding.ivArrow.setOnClickListener {
-            conroller.navigate(R.id.authPhoneFragment)
+            controller.navigate(R.id.authPhoneFragment)
         }
     }
-
-//    if (it != null) {
-//        redrawButtonAsState(it.length == 6, binding.bNext)
-//    }
 
     private fun onTextChangedListener() {
          otpTextView.otpListener = object : OTPListener {
@@ -78,7 +74,6 @@ class AuthPasswordFragment : Fragment() {
              override fun onInteractionListener() {
                  if (binding.etPassword.otp != null) {
                      redrawButtonAsState(binding.etPassword.otp.toString().length == 6, binding.bNext)
-                     Log.d("damn", "Ага, верхняя штука")
                  }
              }
 
@@ -99,13 +94,4 @@ class AuthPasswordFragment : Fragment() {
         }
     }
 
-    private fun onBtnNextClick() {
-        Log.d("dam", "поон")
-        val controller = findNavController()
-        Log.d("dam", "пон")
-        binding.bNext.setOnClickListener {
-            controller.navigate(R.id.mainActivity)
-            Log.d("dam", "Не пон")
-        }
-    }
 }

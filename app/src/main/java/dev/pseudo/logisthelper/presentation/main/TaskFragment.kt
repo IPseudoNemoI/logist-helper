@@ -1,59 +1,72 @@
 package dev.pseudo.logisthelper.presentation.main
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.FragmentTaskBinding
+import dev.pseudo.logisthelper.presentation.task.TaskViewModel
+import dev.pseudo.logisthelper.presentation.task.adapter.TaskAdapter
 
 class TaskFragment : Fragment() {
 
-    lateinit var binding: FragmentTaskBinding
+    private var _binding: FragmentTaskBinding? = null
+    private val binding: FragmentTaskBinding
+        get() = _binding ?: error("FragmentTaskBinding is null")
+
+    private val viewModel: TaskViewModel by viewModels()
+    private val taskAdapter = TaskAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTaskBinding.inflate(inflater)
+        _binding = FragmentTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val controller = findNavController()
-        binding.bottomNavigationView.setupWithNavController(controller)
+
+        setupBottomNavigation()
+        setupRecyclerView()
+        observeViewModel()
+
+        viewModel.loadIncomingTasks()
     }
 
-//    private fun replaceFragment() {
-//        val controller = findNavController()
-//
-//        binding.bottomNavigationView.setOnItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.task -> {
-//                    controller.navigate(R.id.taskFragment)
-//                    true
-//                }
-//
-//                R.id.graph -> {
-//                    controller.navigate(R.id.graphFragment)
-//                    true
-//                }
-//
-//                R.id.message -> {
-//                    controller.navigate(R.id.messageFragment)
-//                    true
-//                }
-//
-//                R.id.profile -> {
-//                    controller.navigate(R.id.profileFragment)
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.rvTasks.adapter = null
+        _binding = null
     }
+
+    private fun setupBottomNavigation() {
+        binding.bottomNavigationView.setupWithNavController(findNavController())
+
+        binding.bottomNavigationView.setBackgroundResource(
+            R.drawable.bg_bottom_nav
+        )
+    }
+
+    private fun setupRecyclerView() {
+        binding.rvTasks.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvTasks.adapter = taskAdapter
+    }
+
+    private fun observeViewModel() {
+        viewModel.tasks.observe(viewLifecycleOwner) { tasks ->
+            taskAdapter.submitList(tasks)
+        }
+    }
+}

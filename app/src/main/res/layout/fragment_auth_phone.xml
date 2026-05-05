@@ -38,7 +38,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/stolzl_regular"
         android:text="@string/welcome_title"
-        android:textColor="#2B2D35"
+        android:textColor="@color/alt_black"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/stolzl_book"
         android:text="@string/enter_your_number_title"
-        android:textColor="#3C4049"
+        android:textColor="@color/alt_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
