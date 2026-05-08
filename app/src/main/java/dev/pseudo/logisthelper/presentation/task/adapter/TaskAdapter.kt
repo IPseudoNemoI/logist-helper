@@ -2,9 +2,12 @@ package dev.pseudo.logisthelper.presentation.task.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.ItemTaskBinding
 import dev.pseudo.logisthelper.presentation.task.model.TaskUi
+
 class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     private val items = mutableListOf<TaskUi>()
@@ -18,18 +21,47 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     inner class TaskViewHolder(private val binding: ItemTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: TaskUi) {
-            binding.tvTaskTitle.text = item.title
-            binding.tvPrice.text = item.price
-            binding.tvDate.text = item.createdDate
+        fun bind(item: TaskUi) = with(binding) {
+            tvTaskTitle.text = item.title
+            tvPrice.text = item.price
+            tvDate.text = item.createdDate
 
-            binding.tvAddressFrom.text = item.fromAddress
-            binding.tvDateFrom.text = item.fromDate
+            tvAddressFrom.text = item.fromAddress
+            tvDateFrom.text = item.fromDate
+            tvAddressTo.text = item.toAddress
+            tvDateTo.text = item.toDate
 
-            binding.tvAddressTo.text = item.toAddress
-            binding.tvDateTo.text = item.toDate
+            tvStatus.text = item.statusText
+            applyStatusStyle(item.statusText)
+        }
 
-            binding.tvStatus.text = item.statusText
+        private fun applyStatusStyle(status: String) = with(binding.tvStatus) {
+            when (status) {
+                "Новое" -> {
+                    setBackgroundResource(R.drawable.bg_status_new)
+                    setTextColor(ContextCompat.getColor(context, R.color.green))
+                }
+
+                "Запланировано" -> {
+                    setBackgroundResource(R.drawable.bg_status_planned)
+                    setTextColor(ContextCompat.getColor(context, R.color.blue))
+                }
+
+                "В процессе" -> {
+                    setBackgroundResource(R.drawable.bg_status_progress)
+                    setTextColor(ContextCompat.getColor(context, R.color.purple))
+                }
+
+                "Проверка" -> {
+                    setBackgroundResource(R.drawable.bg_status_check)
+                    setTextColor(ContextCompat.getColor(context, R.color.orange))
+                }
+
+                else -> {
+                    setBackgroundResource(R.drawable.bg_status_new)
+                    setTextColor(ContextCompat.getColor(context, R.color.green))
+                }
+            }
         }
     }
 
@@ -46,5 +78,5 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         holder.bind(items[position])
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount(): Int = items.size
 }

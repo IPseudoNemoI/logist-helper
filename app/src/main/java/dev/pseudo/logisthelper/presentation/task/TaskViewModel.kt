@@ -69,4 +69,41 @@ class TaskViewModel : ViewModel() {
             )
         )
     }
+
+    fun loadInProgressTasks() {
+        _tasks.value = listOf(
+            TaskUi(
+                title = "Задание № 008",
+                price = "78 500,00 ₽",
+                createdDate = "06.05.2026 · 08:15",
+                fromAddress = "улица Большевистская, 270",
+                fromDate = "07.05.2026 · 06:30",
+                toAddress = "Северный проезд, 43",
+                toDate = "07.05.2026 · 12:00",
+                statusText = "Запланировано"
+            ),
+
+            TaskUi(
+                title = "Задание № 007",
+                price = "54 300,00 ₽",
+                createdDate = "06.05.2026 · 09:40",
+                fromAddress = "улица Немировича-Данченко, 146",
+                fromDate = "07.05.2026 · 07:00",
+                toAddress = "улица Петухова, 79",
+                toDate = "07.05.2026 · 15:30",
+                statusText = "В процессе"
+            ),
+
+            TaskUi(
+                title = "Задание № 006",
+                price = "91 000,00 ₽",
+                createdDate = "06.05.2026 · 11:20",
+                fromAddress = "Красный проспект, 220",
+                fromDate = "07.05.2026 · 05:45",
+                toAddress = "Толмачёвское шоссе, 19к3",
+                toDate = "07.05.2026 · 13:40",
+                statusText = "Проверка"
+            )
+        )
+    }
 }

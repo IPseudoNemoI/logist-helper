@@ -9,6 +9,9 @@
     <color name="alt_black">#2B2D35</color>
     <color name="red">#F0303F</color>
     <color name="green">#59C617</color>
+    <color name="blue">#308ADD</color>
+    <color name="purple">#C649F2</color>
+    <color name="orange">#FAB020</color>
     <color name="light_green">#EEF9E8</color>
     <color name="light_gray">#6A7B94</color>
     <color name="screen_background">#F4F5F8</color>

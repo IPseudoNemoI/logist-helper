@@ -1,18 +1,13 @@
 package dev.pseudo.logisthelper.presentation.main
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import dev.pseudo.logisthelper.R
+import com.google.android.material.tabs.TabLayout
 import dev.pseudo.logisthelper.databinding.FragmentTaskBinding
 import dev.pseudo.logisthelper.presentation.task.TaskViewModel
 import dev.pseudo.logisthelper.presentation.task.adapter.TaskAdapter
@@ -40,6 +35,7 @@ class TaskFragment : Fragment() {
 
         setupRecyclerView()
         observeViewModel()
+        setupTabs()
 
         viewModel.loadIncomingTasks()
     }
@@ -59,5 +55,21 @@ class TaskFragment : Fragment() {
         viewModel.tasks.observe(viewLifecycleOwner) { tasks ->
             taskAdapter.submitList(tasks)
         }
+    }
+
+    private fun setupTabs() {
+        binding.tabLayoutTasks.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                when (tab.position) {
+                    0 -> viewModel.loadIncomingTasks()
+                    1 -> viewModel.loadInProgressTasks()
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) = Unit
+
+            override fun onTabReselected(tab: TabLayout.Tab) = Unit
+        })
     }
 }
