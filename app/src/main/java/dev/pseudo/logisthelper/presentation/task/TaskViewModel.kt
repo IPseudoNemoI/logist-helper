@@ -12,7 +12,6 @@ class TaskViewModel : ViewModel() {
 
     fun loadIncomingTasks() {
         _tasks.value = listOf(
-
             TaskUi(
                 title = "Задание № 005",
                 price = "27 000,00 ₽",
@@ -21,9 +20,13 @@ class TaskViewModel : ViewModel() {
                 fromDate = "06.05.2026 · 11:00",
                 toAddress = "Ипподромская улица, 45",
                 toDate = "06.05.2026 · 17:30",
-                statusText = "Новое"
+                statusText = "Новое",
+                cargoType = "Запчасти для спецтехники",
+                bodyType = "Цельнометаллический фургон",
+                cargoWeight = "850 кг",
+                contactName = "Смирнов Алексей Викторович",
+                contactPhone = "+7 923 145 62 18"
             ),
-
             TaskUi(
                 title = "Задание № 004",
                 price = "51 200,00 ₽",
@@ -32,9 +35,13 @@ class TaskViewModel : ViewModel() {
                 fromDate = "06.05.2026 · 08:30",
                 toAddress = "улица Станционная, 60",
                 toDate = "06.05.2026 · 15:00",
-                statusText = "Новое"
+                statusText = "Новое",
+                cargoType = "Коробки с бытовой техникой",
+                bodyType = "Фургон",
+                cargoWeight = "1 450 кг",
+                contactName = "Павлов Денис Сергеевич",
+                contactPhone = "+7 913 912 40 55"
             ),
-
             TaskUi(
                 title = "Задание № 003",
                 price = "30 000,00 ₽",
@@ -43,9 +50,13 @@ class TaskViewModel : ViewModel() {
                 fromDate = "06.05.2026 · 09:00",
                 toAddress = "Советская улица, 18",
                 toDate = "06.05.2026 · 14:00",
-                statusText = "Новое"
+                statusText = "Новое",
+                cargoType = "Документы и офисные коробки",
+                bodyType = "Легковой фургон",
+                cargoWeight = "180 кг",
+                contactName = "Кузнецова Марина Олеговна",
+                contactPhone = "+7 923 702 18 44"
             ),
-
             TaskUi(
                 title = "Задание № 002",
                 price = "42 500,00 ₽",
@@ -54,9 +65,13 @@ class TaskViewModel : ViewModel() {
                 fromDate = "06.05.2026 · 08:00",
                 toAddress = "улица Покрышкина, 3",
                 toDate = "06.05.2026 · 16:00",
-                statusText = "Новое"
+                statusText = "Новое",
+                cargoType = "Мебельная фурнитура",
+                bodyType = "Тентованный",
+                cargoWeight = "1 100 кг",
+                contactName = "Иванов Артём Николаевич",
+                contactPhone = "+7 913 785 33 09"
             ),
-
             TaskUi(
                 title = "Задание № 001",
                 price = "64 000,00 ₽",
@@ -65,24 +80,18 @@ class TaskViewModel : ViewModel() {
                 fromDate = "05.05.2026 · 07:30",
                 toAddress = "Военная улица, 12",
                 toDate = "05.05.2026 · 13:30",
-                statusText = "Новое"
+                statusText = "Новое",
+                cargoType = "Продукты в заводской упаковке",
+                bodyType = "Изотермический фургон",
+                cargoWeight = "2 200 кг",
+                contactName = "Морозова Елена Андреевна",
+                contactPhone = "+7 923 188 64 27"
             )
         )
     }
 
     fun loadInProgressTasks() {
         _tasks.value = listOf(
-            TaskUi(
-                title = "Задание № 008",
-                price = "78 500,00 ₽",
-                createdDate = "06.05.2026 · 08:15",
-                fromAddress = "улица Большевистская, 270",
-                fromDate = "07.05.2026 · 06:30",
-                toAddress = "Северный проезд, 43",
-                toDate = "07.05.2026 · 12:00",
-                statusText = "Запланировано"
-            ),
-
             TaskUi(
                 title = "Задание № 007",
                 price = "54 300,00 ₽",
@@ -91,9 +100,13 @@ class TaskViewModel : ViewModel() {
                 fromDate = "07.05.2026 · 07:00",
                 toAddress = "улица Петухова, 79",
                 toDate = "07.05.2026 · 15:30",
-                statusText = "В процессе"
+                statusText = "В процессе",
+                cargoType = "Строительный инструмент",
+                bodyType = "Бортовой",
+                cargoWeight = "1 750 кг",
+                contactName = "Соколов Илья Романович",
+                contactPhone = "+7 913 440 81 36"
             ),
-
             TaskUi(
                 title = "Задание № 006",
                 price = "91 000,00 ₽",
@@ -102,7 +115,12 @@ class TaskViewModel : ViewModel() {
                 fromDate = "07.05.2026 · 05:45",
                 toAddress = "Толмачёвское шоссе, 19к3",
                 toDate = "07.05.2026 · 13:40",
-                statusText = "Проверка"
+                statusText = "Проверка",
+                cargoType = "Паллеты с расходными материалами",
+                bodyType = "Евротент",
+                cargoWeight = "3 000 кг",
+                contactName = "Орлов Максим Андреевич",
+                contactPhone = "+7 923 611 72 90"
             )
         )
     }

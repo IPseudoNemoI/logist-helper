@@ -1,4 +1,4 @@
-package dev.pseudo.logisthelper.presentation.main
+package dev.pseudo.logisthelper.presentation.task
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayout
+import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.FragmentTaskBinding
-import dev.pseudo.logisthelper.presentation.task.TaskViewModel
 import dev.pseudo.logisthelper.presentation.task.adapter.TaskAdapter
 
 class TaskFragment : Fragment() {
@@ -19,7 +20,29 @@ class TaskFragment : Fragment() {
         get() = _binding ?: error("FragmentTaskBinding is null")
 
     private val viewModel: TaskViewModel by viewModels()
-    private val taskAdapter = TaskAdapter()
+
+    private val taskAdapter = TaskAdapter { task ->
+        val bundle = Bundle().apply {
+            putString("title", task.title)
+            putString("price", task.price)
+            putString("createdDate", task.createdDate)
+            putString("fromAddress", task.fromAddress)
+            putString("fromDate", task.fromDate)
+            putString("toAddress", task.toAddress)
+            putString("toDate", task.toDate)
+            putString("statusText", task.statusText)
+            putString("cargoType", task.cargoType)
+            putString("bodyType", task.bodyType)
+            putString("cargoWeight", task.cargoWeight)
+            putString("contactName", task.contactName)
+            putString("contactPhone", task.contactPhone)
+        }
+
+        findNavController().navigate(
+            R.id.action_taskFragment_to_taskDetailsFragment,
+            bundle
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,7 +82,6 @@ class TaskFragment : Fragment() {
 
     private fun setupTabs() {
         binding.tabLayoutTasks.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-
             override fun onTabSelected(tab: TabLayout.Tab) {
                 when (tab.position) {
                     0 -> viewModel.loadIncomingTasks()
@@ -68,7 +90,6 @@ class TaskFragment : Fragment() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) = Unit
-
             override fun onTabReselected(tab: TabLayout.Tab) = Unit
         })
     }

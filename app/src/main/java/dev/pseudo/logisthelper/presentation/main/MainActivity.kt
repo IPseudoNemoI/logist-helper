@@ -9,6 +9,7 @@ import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.ActivityMainBinding
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.view.View
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
@@ -42,5 +43,12 @@ class MainActivity : AppCompatActivity() {
             ColorStateList.valueOf(Color.TRANSPARENT)
 
         window.navigationBarColor = white
+    }
+    fun hideBottomNav() {
+        binding.bottomNavigationView.visibility = View.GONE
+    }
+
+    fun showBottomNav() {
+        binding.bottomNavigationView.visibility = View.VISIBLE
     }
 }

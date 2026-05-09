@@ -21,7 +21,14 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/taskFragment"
-        android:name="dev.pseudo.logisthelper.presentation.main.TaskFragment"
+        android:name="dev.pseudo.logisthelper.presentation.task.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" />
+    <action
+        android:id="@+id/action_taskFragment_to_taskDetailsFragment"
+        app:destination="@id/taskDetailsFragment" />
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="dev.pseudo.logisthelper.presentation.task.details.TaskDetailsFragment"
+        android:label="TaskDetailsFragment" />
 </navigation>

@@ -8,5 +8,10 @@ data class TaskUi(
     val fromDate: String,
     val toAddress: String,
     val toDate: String,
-    val statusText: String
+    val statusText: String,
+    val cargoType: String,
+    val bodyType: String,
+    val cargoWeight: String,
+    val contactName: String,
+    val contactPhone: String
 )

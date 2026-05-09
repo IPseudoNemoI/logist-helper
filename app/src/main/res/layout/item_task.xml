@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="16dp"
     app:cardElevation="0dp"
-    app:cardBackgroundColor="@color/white">
+    app:strokeColor="@android:color/transparent"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,10 +19,10 @@
             android:id="@+id/tvTaskTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/stolzl_regular"
             android:text="Задание № 003"
             android:textColor="@color/alt_black"
             android:textSize="14sp"
-            android:fontFamily="@font/stolzl_regular"
             app:layout_constraintEnd_toStartOf="@id/tvPrice"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,10 +31,10 @@
             android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/stolzl_regular"
             android:text="30 000,00 ₽"
             android:textColor="@color/alt_black"
             android:textSize="14sp"
-            android:fontFamily="@font/stolzl_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,11 +42,11 @@
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/stolzl_book"
             android:text="11.08.2023 · 12:00"
             android:textColor="@color/alt_dark"
             android:textSize="12sp"
-            android:fontFamily="@font/stolzl_book"
-            android:layout_marginTop="6dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTaskTitle" />
 
@@ -53,15 +54,15 @@
             android:id="@+id/tvStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Новое"
-            android:textSize="11sp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_status_new"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="Новое"
             android:textColor="@color/green"
+            android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPrice" />
 
@@ -69,21 +70,21 @@
             android:id="@+id/addressContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/bg_address_block"
-            android:padding="10dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            android:background="@drawable/bg_address_block"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/tvDate">
 
             <TextView
                 android:id="@+id/tvAddressFrom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/stolzl_book"
                 android:text="Машиностроительная улица, 91"
                 android:textColor="@color/alt_black"
-                android:fontFamily="@font/stolzl_book"
                 android:textSize="14sp" />
 
             <TextView
@@ -98,11 +99,11 @@
                 android:id="@+id/tvAddressTo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/stolzl_book"
                 android:text="Магистральная улица, 52"
                 android:textColor="@color/alt_black"
-                android:fontFamily="@font/stolzl_book"
-                android:textSize="14sp"
-                android:layout_marginTop="8dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvDateTo"

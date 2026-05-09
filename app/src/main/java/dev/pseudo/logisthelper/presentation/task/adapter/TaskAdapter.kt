@@ -8,7 +8,9 @@ import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.ItemTaskBinding
 import dev.pseudo.logisthelper.presentation.task.model.TaskUi
 
-class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(
+    private val onTaskClick: (TaskUi) -> Unit
+) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     private val items = mutableListOf<TaskUi>()
 
@@ -18,8 +20,9 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         notifyDataSetChanged()
     }
 
-    inner class TaskViewHolder(private val binding: ItemTaskBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class TaskViewHolder(
+        private val binding: ItemTaskBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: TaskUi) = with(binding) {
             tvTaskTitle.text = item.title
@@ -33,6 +36,10 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
             tvStatus.text = item.statusText
             applyStatusStyle(item.statusText)
+
+            root.setOnClickListener {
+                onTaskClick(item)
+            }
         }
 
         private fun applyStatusStyle(status: String) = with(binding.tvStatus) {
