@@ -1,6 +1,7 @@
 package dev.pseudo.logisthelper.presentation.task.model
 
 data class TaskUi(
+    val id: Int,
     val title: String,
     val price: String,
     val createdDate: String,
@@ -9,6 +10,7 @@ data class TaskUi(
     val toAddress: String,
     val toDate: String,
     val statusText: String,
+
     val cargoType: String,
     val bodyType: String,
     val cargoWeight: String,

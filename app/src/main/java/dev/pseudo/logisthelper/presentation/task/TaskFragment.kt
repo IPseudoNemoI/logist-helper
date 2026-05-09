@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,10 +20,11 @@ class TaskFragment : Fragment() {
     private val binding: FragmentTaskBinding
         get() = _binding ?: error("FragmentTaskBinding is null")
 
-    private val viewModel: TaskViewModel by viewModels()
+    private val viewModel: TaskViewModel by activityViewModels()
 
     private val taskAdapter = TaskAdapter { task ->
         val bundle = Bundle().apply {
+            putInt("id", task.id)
             putString("title", task.title)
             putString("price", task.price)
             putString("createdDate", task.createdDate)
@@ -36,6 +38,7 @@ class TaskFragment : Fragment() {
             putString("cargoWeight", task.cargoWeight)
             putString("contactName", task.contactName)
             putString("contactPhone", task.contactPhone)
+            putString("statusText", task.statusText)
         }
 
         findNavController().navigate(
