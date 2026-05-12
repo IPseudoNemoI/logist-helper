@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="24dp"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <TextView
+        android:id="@+id/tvSelectedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="15 мая 2026"
+        android:textColor="@color/alt_black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:fontFamily="@font/stolzl_regular" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Запросить на смену"
+        android:textColor="@color/middle_gray_blue"
+        android:textSize="12sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/stolzl_book" />
+
+    <TextView
+        android:id="@+id/tvWeekend"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:text="• Выходной"
+        android:textColor="@color/red"
+        android:textSize="14sp"
+        android:fontFamily="@font/stolzl_book" />
+
+    <TextView
+        android:id="@+id/tvSick"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:text="• Больничный"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:fontFamily="@font/stolzl_book" />
+
+    <TextView
+        android:id="@+id/tvExtraWork"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:text="• Готов к подработке"
+        android:textColor="@color/orange"
+        android:textSize="14sp"
+        android:fontFamily="@font/stolzl_book" />
+
+</LinearLayout>
