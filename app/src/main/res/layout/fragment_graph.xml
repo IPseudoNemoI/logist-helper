@@ -1,18 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/screen_background"
     tools:context=".presentation.main.GraphFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <View
+        android:id="@+id/headerBackground"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Graph"
-        android:textSize="32dp" />
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/stolzl_regular"
+        android:text="График смен"
+        android:textColor="@color/alt_black"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/calendarCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_details_card"
+        app:layout_constraintTop_toBottomOf="@id/headerBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPrevMonth"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:text="‹"
+                android:textColor="@color/alt_black"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/tvMonth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/stolzl_regular"
+                android:text="Октябрь 2023"
+                android:textColor="@color/alt_black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvNextMonth"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:text="›"
+                android:textColor="@color/alt_black"
+                android:textSize="28sp" />
+
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/weekDaysGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="7">
+
+            <TextView style="@style/CalendarWeekDay" android:text="ПН" />
+            <TextView style="@style/CalendarWeekDay" android:text="ВТ" />
+            <TextView style="@style/CalendarWeekDay" android:text="СР" />
+            <TextView style="@style/CalendarWeekDay" android:text="ЧТ" />
+            <TextView style="@style/CalendarWeekDay" android:text="ПТ" />
+            <TextView style="@style/CalendarWeekDayWeekend" android:text="СБ" />
+            <TextView style="@style/CalendarWeekDayWeekend" android:text="ВС" />
+
+        </GridLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/item_calendar_day" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/CalendarLegendItem"
+                    android:text="• Рабочий"
+                    android:textSize="14dp" />
+
+                <TextView
+                    style="@style/CalendarLegendItem"
+                    android:text="• Выходной"
+                    android:textSize="14dp"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    style="@style/CalendarLegendItem"
+                    android:text="• Больничный"
+                    android:textSize="14dp"
+                    android:textColor="@color/blue" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/CalendarLegendItem"
+                android:layout_marginTop="4dp"
+                android:text="• Готов к подработке"
+                android:textSize="14dp"
+                android:textColor="@color/orange" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

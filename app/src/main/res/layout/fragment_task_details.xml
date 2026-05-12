@@ -213,6 +213,7 @@
                 android:text="+7 923 145 62 18"
                 android:textColor="@color/blue"
                 android:textSize="14sp"
+                android:autoLink="phone"
                 android:fontFamily="@font/stolzl_book" />
 
             <View
@@ -299,6 +300,7 @@
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/low_gray"
             android:text="Отказаться"
             android:textAllCaps="false"
