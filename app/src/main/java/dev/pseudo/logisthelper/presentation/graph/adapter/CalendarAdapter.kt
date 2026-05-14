@@ -28,16 +28,23 @@ class CalendarAdapter(
         fun bind(item: CalendarDayUi) = with(binding) {
             tvDay.text = item.dayNumber
 
-            val background = when {
-                item.isToday -> R.drawable.bg_day_today_outline
-                item.status == DayStatus.WORK -> R.drawable.bg_day_work
-                item.status == DayStatus.WEEKEND -> R.drawable.bg_day_holiday
-                item.status == DayStatus.SICK -> R.drawable.bg_day_sick
-                item.status == DayStatus.EXTRA_WORK -> R.drawable.bg_day_ready
-                else -> R.drawable.bg_day_work
+            val background = when (item.status) {
+                DayStatus.WORK -> R.drawable.bg_day_work
+                DayStatus.WEEKEND -> R.drawable.bg_day_holiday
+                DayStatus.SICK -> R.drawable.bg_day_sick
+                DayStatus.EXTRA_WORK -> R.drawable.bg_day_ready
             }
 
             tvDay.setBackgroundResource(background)
+
+            if (item.isToday) {
+                tvDay.foreground = ContextCompat.getDrawable(
+                    root.context,
+                    R.drawable.bg_day_today_outline
+                )
+            } else {
+                tvDay.foreground = null
+            }
 
             val textColor = if (item.isCurrentMonth) {
                 R.color.alt_black
@@ -45,9 +52,7 @@ class CalendarAdapter(
                 R.color.middle_gray_blue
             }
 
-            tvDay.setTextColor(
-                ContextCompat.getColor(root.context, textColor)
-            )
+            tvDay.setTextColor(ContextCompat.getColor(root.context, textColor))
 
             root.setOnClickListener {
                 if (item.isCurrentMonth) {

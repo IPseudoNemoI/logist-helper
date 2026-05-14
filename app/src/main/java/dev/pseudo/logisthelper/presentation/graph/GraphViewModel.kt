@@ -78,4 +78,8 @@ class GraphViewModel : ViewModel() {
         val month = yearMonth.month.getDisplayName(TextStyle.FULL_STANDALONE, Locale("ru"))
         return "${month.replaceFirstChar { it.uppercase() }} ${yearMonth.year}"
     }
+
+    fun refreshCalendar() {
+        loadMonth()
+    }
 }

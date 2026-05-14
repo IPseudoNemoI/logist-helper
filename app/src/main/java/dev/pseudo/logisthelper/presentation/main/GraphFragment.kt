@@ -45,6 +45,11 @@ class GraphFragment : Fragment() {
         setupMonthButtons()
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshCalendar()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
