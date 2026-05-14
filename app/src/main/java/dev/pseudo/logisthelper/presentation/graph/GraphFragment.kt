@@ -1,4 +1,4 @@
-package dev.pseudo.logisthelper.presentation.main
+package dev.pseudo.logisthelper.presentation.graph
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dev.pseudo.logisthelper.databinding.BottomSheetDayStatusBinding
 import dev.pseudo.logisthelper.databinding.FragmentGraphBinding
-import dev.pseudo.logisthelper.presentation.graph.GraphViewModel
 import dev.pseudo.logisthelper.presentation.graph.adapter.CalendarAdapter
 import dev.pseudo.logisthelper.presentation.graph.model.CalendarDayUi
 import dev.pseudo.logisthelper.presentation.graph.model.DayStatus

@@ -6,12 +6,12 @@
     app:startDestination="@id/taskFragment">
     <fragment
         android:id="@+id/graphFragment"
-        android:name="dev.pseudo.logisthelper.presentation.main.GraphFragment"
+        android:name="dev.pseudo.logisthelper.presentation.graph.GraphFragment"
         android:label="fragment_graph"
         tools:layout="@layout/fragment_graph" />
     <fragment
         android:id="@+id/messageFragment"
-        android:name="dev.pseudo.logisthelper.presentation.main.MessageFragment"
+        android:name="dev.pseudo.logisthelper.presentation.message.MessageFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" />
     <fragment
