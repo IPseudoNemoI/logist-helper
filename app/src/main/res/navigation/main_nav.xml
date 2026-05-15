@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_message" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="dev.pseudo.logisthelper.presentation.main.ProfileFragment"
+        android:name="dev.pseudo.logisthelper.presentation.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment

@@ -29,4 +29,23 @@
         <item name="android:fontFamily">@font/stolzl_book</item>
     </style>
 
+    <style name="ProfileLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#A8AFBF</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ProfileValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#2B2D35</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

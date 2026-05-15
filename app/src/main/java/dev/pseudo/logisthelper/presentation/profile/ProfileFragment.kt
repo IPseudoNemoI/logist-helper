@@ -1,5 +1,6 @@
-package dev.pseudo.logisthelper.presentation.main
+package dev.pseudo.logisthelper.presentation.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,31 @@ class ProfileFragment : Fragment() {
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupPhone()
+        setupLogout()
+    }
+
+    private fun setupPhone() {
+        val phone = requireContext()
+            .getSharedPreferences("auth", Context.MODE_PRIVATE)
+            .getString("phone", null)
+
+        binding.tvPhone.text = phone ?: "Номер не найден"
+    }
+
+    private fun setupLogout() {
+        binding.tvLogout.setOnClickListener {
+            requireContext()
+                .getSharedPreferences("auth", Context.MODE_PRIVATE)
+                .edit()
+                .clear()
+                .apply()
+        }
     }
 
     override fun onDestroyView() {

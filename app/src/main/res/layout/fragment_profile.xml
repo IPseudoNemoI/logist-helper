@@ -1,18 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.main.ProfileFragment">
+    android:background="#F2F4F8"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Profile"
-        android:textSize="32dp" />
+        android:layout_height="96dp"
+        android:background="@android:color/white"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="14dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvProfileTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Профиль"
+            android:textColor="#2B2D35"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/bg_profile_card"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileAvatar"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_avatar_profile"
+                app:shapeAppearanceOverlay="@style/CircleImage" />
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Петров Иван Алексеевич"
+                android:textColor="#2B2D35"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvProfileRole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Водитель"
+                android:textColor="#6F7480"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_profile_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/ProfileLabel"
+                android:text="Табельный №" />
+
+            <TextView
+                style="@style/ProfileValue"
+                android:text="1111" />
+
+            <TextView
+                style="@style/ProfileLabel"
+                android:layout_marginTop="12dp"
+                android:text="Номер телефона" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                style="@style/ProfileValue"
+                android:text="+7 987 654-32-10" />
+
+            <TextView
+                style="@style/ProfileLabel"
+                android:layout_marginTop="12dp"
+                android:text="Гражданство" />
+
+            <TextView
+                style="@style/ProfileValue"
+                android:text="РФ" />
+
+            <TextView
+                style="@style/ProfileLabel"
+                android:layout_marginTop="12dp"
+                android:text="Машина" />
+
+            <TextView
+                style="@style/ProfileValue"
+                android:text="Грузовая" />
+
+            <TextView
+                style="@style/ProfileLabel"
+                android:layout_marginTop="12dp"
+                android:text="Номера" />
+
+            <TextView
+                style="@style/ProfileValue"
+                android:text="А 000 АА 199" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tvStatistics"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_profile_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Статистика"
+                android:textColor="#2B2D35"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/arrow_next" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tvLogout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_profile_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Выйти"
+                android:textColor="#FF3040"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/arrow_next"
+                app:tint="#FF3040" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

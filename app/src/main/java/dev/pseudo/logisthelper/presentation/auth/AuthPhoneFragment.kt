@@ -1,5 +1,6 @@
 package dev.pseudo.logisthelper.presentation.auth
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -124,7 +125,18 @@ class AuthPhoneFragment : Fragment() {
 
     private fun onBtnNextClick() {
         binding.bNext.setOnClickListener {
+
+            savePhone(binding.etPhone.text.toString())
+
             findNavController().navigate(R.id.authPasswordFragment)
         }
+    }
+
+    private fun savePhone(phone: String) {
+        requireContext()
+            .getSharedPreferences("auth", Context.MODE_PRIVATE)
+            .edit()
+            .putString("phone", phone)
+            .apply()
     }
 }
