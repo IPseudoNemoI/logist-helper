@@ -3,6 +3,7 @@ package dev.pseudo.logisthelper.presentation.message
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.FragmentMessageBinding
@@ -20,27 +21,7 @@ class MessageFragment : Fragment(R.layout.fragment_message) {
 
     private val messageAdapter = MessageAdapter()
 
-    private val messages = mutableListOf(
-        MessageUi(
-            text = "14 мая",
-            type = MessageType.DATE
-        ),
-        MessageUi(
-            text = "Ты сегодня выйдешь на смену?",
-            time = "7:48",
-            isMine = false
-        ),
-        MessageUi(
-            text = "Да, сегодня буду",
-            time = "7:48",
-            isMine = true
-        ),
-        MessageUi(
-            text = "Ждем тебя",
-            time = "7:49",
-            isMine = false
-        )
-    )
+    private val viewModel: MessageViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,7 +38,7 @@ class MessageFragment : Fragment(R.layout.fragment_message) {
         }
 
         binding.rvMessages.adapter = messageAdapter
-        messageAdapter.submitList(messages)
+        messageAdapter.submitList(viewModel.messages)
     }
 
     private fun setupSendButton() {
@@ -72,11 +53,11 @@ class MessageFragment : Fragment(R.layout.fragment_message) {
                 isMine = true
             )
 
-            messages.add(message)
+            viewModel.addMessage(message)
             messageAdapter.addMessage(message)
 
             binding.etMessage.text.clear()
-            binding.rvMessages.smoothScrollToPosition(messages.lastIndex)
+            binding.rvMessages.smoothScrollToPosition(viewModel.messages.lastIndex)
         }
     }
 
