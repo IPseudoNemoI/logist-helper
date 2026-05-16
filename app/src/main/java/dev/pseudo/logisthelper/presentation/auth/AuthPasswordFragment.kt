@@ -1,14 +1,11 @@
 package dev.pseudo.logisthelper.presentation.auth
 
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.otpview.OTPListener
@@ -18,7 +15,7 @@ import dev.pseudo.logisthelper.databinding.FragmentAuthPasswordBinding
 
 class AuthPasswordFragment : Fragment() {
 
-    private lateinit var otpTextView : OTPTextView
+    private lateinit var otpTextView: OTPTextView
     private lateinit var binding: FragmentAuthPasswordBinding
 
     override fun onCreateView(
@@ -69,17 +66,20 @@ class AuthPasswordFragment : Fragment() {
     }
 
     private fun onTextChangedListener() {
-         otpTextView.otpListener = object : OTPListener {
+        otpTextView.otpListener = object : OTPListener {
 
-             override fun onInteractionListener() {
-                 if (binding.etPassword.otp != null) {
-                     redrawButtonAsState(binding.etPassword.otp.toString().length == 6, binding.bNext)
-                 }
-             }
+            override fun onInteractionListener() {
+                if (binding.etPassword.otp != null) {
+                    redrawButtonAsState(
+                        binding.etPassword.otp.toString().length == 6,
+                        binding.bNext
+                    )
+                }
+            }
 
-             override fun onOTPComplete(otp: String) {
+            override fun onOTPComplete(otp: String) {
 
-             }
+            }
         }
     }
 

@@ -23,4 +23,3 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 }
-

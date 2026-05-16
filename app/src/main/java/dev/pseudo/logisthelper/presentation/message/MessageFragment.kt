@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.FragmentMessageBinding
 import dev.pseudo.logisthelper.presentation.message.adapter.MessageAdapter
-import dev.pseudo.logisthelper.presentation.message.model.MessageType
 import dev.pseudo.logisthelper.presentation.message.model.MessageUi
 import java.text.SimpleDateFormat
 import java.util.Date

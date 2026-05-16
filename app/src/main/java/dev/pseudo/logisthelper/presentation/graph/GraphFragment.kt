@@ -78,6 +78,7 @@ class GraphFragment : Fragment() {
             viewModel.nextMonth()
         }
     }
+
     private fun formatDate(date: LocalDate): String {
         val month = date.month.getDisplayName(
             TextStyle.FULL_STANDALONE,

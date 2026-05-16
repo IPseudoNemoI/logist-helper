@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dev.pseudo.logisthelper.presentation.graph.model.CalendarDayUi
 import dev.pseudo.logisthelper.presentation.graph.model.DayStatus
-import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.TextStyle

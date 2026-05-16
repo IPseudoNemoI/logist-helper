@@ -8,10 +8,10 @@
         android:id="@+id/tvDay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fontFamily="@font/stolzl_regular"
         android:gravity="center"
         android:text="1"
-        android:textSize="14sp"
-        android:fontFamily="@font/stolzl_regular"
-        android:textColor="@color/alt_black" />
+        android:textColor="@color/alt_black"
+        android:textSize="14sp" />
 
 </FrameLayout>

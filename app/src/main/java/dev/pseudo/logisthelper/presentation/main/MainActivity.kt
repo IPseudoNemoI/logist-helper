@@ -1,16 +1,16 @@
 package dev.pseudo.logisthelper.presentation.main
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import dev.pseudo.logisthelper.R
 import dev.pseudo.logisthelper.databinding.ActivityMainBinding
-import android.content.res.ColorStateList
-import android.graphics.Color
-import android.view.View
-import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         window.navigationBarColor = white
     }
+
     fun hideBottomNav() {
         binding.bottomNavigationView.visibility = View.GONE
     }
