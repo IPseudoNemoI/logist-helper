@@ -1,6 +1,7 @@
 <resources>
 
     <style name="Base.Theme.LogistHelper" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
         <item name="colorSurface">@color/white</item>
         <item name="colorSurfaceContainer">@color/white</item>
         <item name="colorSurfaceVariant">@color/white</item>
