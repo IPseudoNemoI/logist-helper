@@ -1,12 +1,14 @@
 package dev.pseudo.logisthelper.presentation.profile
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import dev.pseudo.logisthelper.databinding.FragmentProfileBinding
+import dev.pseudo.logisthelper.presentation.auth.AuthActivity
 
 class ProfileFragment : Fragment() {
 
@@ -45,6 +47,10 @@ class ProfileFragment : Fragment() {
                 .edit()
                 .clear()
                 .apply()
+
+            val intent = Intent(requireContext(), AuthActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 
